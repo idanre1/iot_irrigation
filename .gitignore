@@ -1,0 +1,4 @@
+# Ignore avrDude bin files
+/build-nano328
+S392-2W_heb.pdf
+curl.tmp
