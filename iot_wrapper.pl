@@ -24,7 +24,7 @@ my $tmp      = "$path/curl.tmp";
 my $certia   = "entry";
 my $url      = "https://www.wunderground.com/il/adamit";
 my $cache    = 0; # Shall the run will be from cached HTML file?
-my $l2addr   = "00:21:13:01:2A:72";
+my $l2addr   = "00:00:00:00:00:00";
 
 my $pid; # PID for rfcomm
 my $u_int8; # 1Byte data type for PACK. Arduino use 7bit ASCII for strings.
