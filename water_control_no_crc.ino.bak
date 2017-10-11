@@ -25,30 +25,38 @@ void loop() {
 	// run over and over
 	if (swSerial.available()) {
 		cmd = swSerial.read();
-//		swSerial.println(cmd);
 		if(cmd == '1') {             // Checks whether value of data is equal to 1
 			if (state == 1)
 				swSerial.println("Already ON");
 			else {
 				swSerial.println("Turning ON");
-				turnOn();
 				state=1;
+				turnOn();
 				digitalWrite(led, HIGH);
 			}
 		}
-		else if (cmd == '2')
+		else if (cmd == '2') {
 			if (state == 2)
 				swSerial.println("Already OFF");
 			else {
 				swSerial.println("Turning OFF");
-				turnOff();
 				state=2;
+				turnOff();
 				digitalWrite(led, LOW);
 			}
+		}
+		else if (cmd == 'H') {
+			if (state == 1)
+				swSerial.println("HELP INFO ON");
+			else if (state == 2)
+				swSerial.println("HELP INFO OFF");
+			else if (state == -1)
+				swSerial.println("HELP INFO RESET");
+			else
+				swSerial.println("HELP INFO UNKNOWN");
+		}
 		else
 			swSerial.println("ERROR");
-
-//		if (Serial.available())
-//		swSerial.write(Serial.read());
 	}
+	delay (100);
 }

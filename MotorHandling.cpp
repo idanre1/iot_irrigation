@@ -38,7 +38,8 @@ void turnOn( void )
    //backwards.  Speed can be from -255 to 255.  Also use of the 
    //brake function which takes no arguements.
    motor1.drive(255,SOLENOID_DELAY);
-   delay(1000);   
+   motor1.brake();
+//   delay(1000);   
 }
 
 void turnOff( void )
@@ -48,5 +49,6 @@ void turnOff( void )
    //backwards.  Speed can be from -255 to 255.  Also use of the 
    //brake function which takes no arguements.
    motor1.drive(-255,SOLENOID_DELAY);
-   delay(1000);   
+   motor1.brake();
+//   delay(1000);   
 }
